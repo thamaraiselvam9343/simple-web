@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Bestie 💖</title>
+
+<style>
+
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#d30ca1;
+color:white;
+overflow-x:hidden;
+}
+
+/* =====================================================
+   INTRO SCREEN
+===================================================== */
+#intro{
+position:fixed;
+width:100%;
+height:100vh;
+background:linear-gradient(45deg,#ff0066,#7928ca,#00ffff);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+animation:introFade 4s forwards 4s;
+}
+
+#intro h1{
+font-size:60px;
+animation:zoomIn 3s ease;
+}
+
+@keyframes zoomIn{
+from{transform:scale(0);opacity:0;}
+to{transform:scale(1);opacity:1;}
+}
+
+@keyframes introFade{
+to{opacity:0;visibility:hidden;}
+}
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+/* =====================================================
+   HERO SECTION
+===================================================== */
+.hero{
+    position:relative;
+    height:100vh;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+    color:white;
+}
+
+/* Video */
+.hero video{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-2;
+}
+
+/* Dark Overlay */
+.hero-overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    z-index:-1;
+}
+
+/* Text */
+.hero-content h1{
+    font-size:70px;
+    text-shadow:0 0 20px #ff00cc,
+                 0 0 40px #00ffff;
+    animation:fadeIn 2s ease forwards;
+}
+
+
+
+/* =====================================================
+   STORY SECTIONS
+===================================================== */
+.section{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:linear-gradient(45deg,#e28080,#ecbaba);
+text-align:center;
+padding:20px;
+}
+
+.section:nth-child(even){
+background:linear-gradient(45deg,#330066,#4cd9dc);
+}
+
+.section h2{
+font-size:50px;
+margin-bottom:20px;
+}
+/* Photo Boxes */
+.photo{
+    position:absolute;
+    width:180px;
+    height:180px;
+    border:4px solid #1cdb0a;
+    box-shadow:0 0 20px #6fff7e;
+    overflow:hidden;
+    animation:float 4s ease-in-out infinite;
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* Left & Right Position */
+.left{
+    left:50px;
+}
+
+.right{
+    right:50px;
+}
+
+
+/* =====================================================
+   ROUND PHOTO
+===================================================== */
+.profile-container{
+margin-top:60px;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.profile-photo{
+width: 400px;px;
+height:400px;
+border-radius:50%;
+object-fit:cover;
+border:6px solid white;
+box-shadow:0 0 25px #ff00cc,
+           0 0 50px #00ffff;
+animation:floatPhoto 4s ease-in-out infinite;
+}
+
+@keyframes floatPhoto{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0px);}
+}
+
+/* =====================================================
+   FIREWORK CANVAS
+===================================================== */
+#fireworks{
+position:fixed;
+top:0;
+left:0;
+pointer-events:none;
+z-index:10;
+}
+
+/* =====================================================
+   FLOWERS
+===================================================== */
+.flower{
+position:fixed;
+top:-20px;
+font-size:20px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+to{transform:translateY(110vh) rotate(360deg);}
+}
+
+/* =====================================================
+   HEARTS
+===================================================== */
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:25px;
+animation:rise linear infinite;
+}
+
+@keyframes rise{
+to{transform:translateY(-110vh);}
+}
+
+/* =====================================================
+   MUSIC BUTTON
+===================================================== */
+#musicBtn{
+position:fixed;
+top:20px;
+right:20px;
+padding:10px 20px;
+background:#ff0066;
+border:none;
+border-radius:20px;
+color:white;
+cursor:pointer;
+z-index:1000;
+}
+/* ================= LAST PAGE VIDEO ================= */
+.last-page{
+position:relative;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+overflow:hidden;
+}
+
+.last-page video{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-1;
+filter:brightness(50%);
+}
+
+.last-page h2{
+font-size:60px;
+z-index:2;
+text-shadow:0 0 30px #ff00cc;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+<h1>🎉    Birthday Surprise   
+    <!-- MUSIC -->
+<button id="musicBtn" onclick="toggleMusic()">🎵 Music</button>
+<audio id="music" loop>mp3
+<source src="image/WhatsApp Audio 2026-02-19 at 9.46.17 PM.mpeg" type="audio/mpeg">
+</audio>
+  🎉</h1>
+
+
+</div>
+<!-- HERO -->
+<div class="hero">
+
+    <!-- Background Video -->
+    <video id="bgVideo" autoplay muted loop playsinline>
+        <source src="image/WhatsApp Video 2026-02-19 at 9.08.58 PM.mp4" type="video/mp4">
+    </video>
+
+    <!-- Overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Content -->
+    <div class="hero-content">
+        <h1>Happy Birthday My Bestie 💖</h1>
+        <p>Welcome to your special surprise ✨</p>
+    </div>
+
+</div>
+
+
+
+<!-- STORY SECTION 1 (WITH PHOTO) -->
+<div class="section">
+<h2>You Are My Forever Friend 💕</h2>
+<p>Thank you for every smile and memory.</p>
+
+<div class="profile-container">
+<img src="c:\Users\ts672\Downloads\WhatsApp Image 2026-02-19 at 10.06.24 PM.jpeg" class="profile-photo" alt="Bestie Photo">
+</div>
+
+</div>
+
+<!-- STORY SECTION 2 -->
+<div class="section">
+<h2>Our Crazy Moments Of Feelings On My Mind</h2>
+<p>Life is beautiful because of you.</p>
+<!-- Left Photo -->
+<div class="photo left">
+    <img src="c:\Users\ts672\Downloads\WhatsApp Image 2026-02-19 at 9.26.17 PM.jpeg" alt="Left Photo">
+</div>
+
+<!-- Right Photo -->
+<div class="photo right">
+    <img src="c:\Users\ts672\Downloads\WhatsApp Image 2026-02-19 at 9.26.59 PM.jpeg" alt="Right Photo">
+</div>
+</div>
+
+<!-- FIREWORK CANVAS -->
+<canvas id="fireworks"></canvas>
+<!-- LAST PAGE WITH VIDEO BACKGROUND -->
+<div class="last-page">
+<video autoplay muted loop>
+<source src="c:\Users\ts672\Downloads\WhatsApp Video 2026-02-19 at 7.17.58 PM.mp4" type="video/mp4">
+</video>
+
+<h2>Thanks For All 💖</h2>
+
+<canvas id="fireworks"></canvas>
+</div>
+
+<script>
+
+/* MUSIC */
+function toggleMusic(){
+let music=document.getElementById("music");
+music.paused ? music.play() : music.pause();
+}
+
+/* FIREWORKS */
+const canvas=document.getElementById("fireworks");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+function createFirework(x,y){
+for(let i=0;i<80;i++){
+particles.push({
+x:x,
+y:y,
+speed:Math.random()*5,
+angle:Math.random()*Math.PI*2,
+radius:2,
+alpha:1
+});
+}
+}
+
+function animateFireworks(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+particles.forEach((p,index)=>{
+p.x+=Math.cos(p.angle)*p.speed;
+p.y+=Math.sin(p.angle)*p.speed;
+p.alpha-=0.02;
+ctx.globalAlpha=p.alpha;
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.radius,0,Math.PI*2);
+ctx.fillStyle="hsl("+Math.random()*360+",100%,50%)";
+ctx.fill();
+if(p.alpha<=0)particles.splice(index,1);
+});
+requestAnimationFrame(animateFireworks);
+}
+animateFireworks();
+
+window.addEventListener("click",(e)=>{
+createFirework(e.clientX,e.clientY);
+});
+
+/* FLOWERS */
+for(let i=0;i<200;i++){
+let flower=document.createElement("div");
+flower.className="flower";
+flower.innerHTML="🌸";
+flower.style.left=Math.random()*100+"vw";
+flower.style.animationDuration=(5+Math.random()*10)+"s";
+flower.style.fontSize=(15+Math.random()*20)+"px";
+document.body.appendChild(flower);
+}
+
+/* HEARTS */
+for(let i=0;i<80;i++){
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="💖";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(6+Math.random()*8)+"s";
+document.body.appendChild(heart);
+}
+
+</script>
+
+</body>
+</html>
